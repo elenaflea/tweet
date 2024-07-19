@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ButtonsLine extends StatelessWidget {
   const ButtonsLine({super.key});
@@ -15,8 +16,7 @@ class ButtonsLine extends StatelessWidget {
           child:      Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              TextButton(onPressed: () {}, child:
-              //const Text("Répondre")
+              TextButton(onPressed: ()=>context.go("/add"), child:
                 Icon(Icons.comment_bank, size:26,)
               ),
               TextButton(onPressed: () {}, child:

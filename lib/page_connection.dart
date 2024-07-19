@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tp_flutter/add_twit_form.dart';
 import 'package:tp_flutter/home_page.dart';
+import 'package:tp_flutter/top_nav_bar.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,6 +22,10 @@ class MyApp extends StatelessWidget {
         GoRoute(
             path: '/twit',
             builder: (context,state) => HomePage()
+        ),
+        GoRoute(
+            path: '/add',
+            builder: (context,state) => AddTweetForm()
         ),
       ]
   );
@@ -68,32 +74,7 @@ class _FormulaireConnectionState extends State<FormulaireConnection> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Container(
-                    color:  Color(0xFF764AF1),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Tab(
-                              icon: Icon(
-                                Icons.add_circle, size:30, color: Colors.white,
-                              ),
-                            ),
-                            Tab(
-                              icon: Icon(
-                                Icons.home_filled, size:30, color: Colors.white,
-                              ),
-                            ),
-                            Tab(
-                              icon: Icon(
-                                Icons.manage_search_rounded, size:30, color: Colors.white,
-                              ),
-                            ),
-                          ]
-                      ),
-                    ),
-                  ),
+                  TopNavBar(),
                   Padding
                     (
                     padding: const EdgeInsets.all(1.0),
